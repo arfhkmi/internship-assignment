@@ -5,9 +5,4 @@ default: &default
 
 production:
   <<: *default
-  adapter: postgresql
-  encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  database: assignment_intern_production
-  username: postgres
-  password: 1234
+  url: <%= ENV['DATABASE_URL'] %>
